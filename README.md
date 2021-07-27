@@ -2,9 +2,11 @@
 Análise Experimental de Algoritmos
 
 ---- Objetivos -----
+
 Este trabalho consiste em analisar o desempenho de um algoritmo de ordenação em diferentes cenários.
 
 ---- Descrição -----
+
 A análise do algoritmo será dividida em duas partes. A primeira parte refere-se à análise assintótica do algoritmo. Na segunda, a análise consistirá em comparar o algoritmo com os seguintes competidores: InsertionSort, SelectionSort, BubbleSort, MergeSort e QuickSort.
 
 Foi considerado arranjos (vetores) com diferentes quantidades de elementos (10, 100, 1.000, 10.000, 100.000, 1.000.000). Os arranjos não possuem valores repetidos. Os valores são inteiros e, para gerar os arranjos iniciais, foram utilizados: (i) arranjos ordenados, (ii) inversamente ordenados, (iii) quase ordenados e (iv) aleatórios.
