@@ -1,4 +1,4 @@
-# analisedealgoritmos
+# Análise de Algoritmos
 Análise Experimental de Algoritmos
 
 ---- Objetivos -----
