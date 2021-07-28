@@ -1,7 +1,6 @@
 package gerador;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -57,7 +56,6 @@ public class GeradorDeSequencias {
 		for (int i = 0; i < t; i++) {
 			v[i] = i;
 		}
-		Arrays.sort(v);
 		int f = (int) (t * 0.1);
 		while (f > 0) {
 			int i = (int) (Math.random() * t);
@@ -95,13 +93,6 @@ public class GeradorDeSequencias {
 			cont++;
 		}
 		return v;
-	}
-
-	public static void main(String[] args) {
-		int[] a = geradorDeSequenciaOrdenadada(30);
-		for (long c : a) {
-			System.out.print(c + " - ");
-		}
 	}
 
 }
