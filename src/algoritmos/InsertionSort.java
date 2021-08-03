@@ -19,5 +19,10 @@ public class InsertionSort extends TempoDeExecucao{
 		return v;
 	}
 
-
+	public void run(int[] vetor) {
+		execute(vetor);
+		
+		System.out.println("---- Insertion Sort ---- \nTempo de Processamento: "+ (finalDoTeste - inicioDoTeste) +" milissegundos \n");
+		
+	}
 }

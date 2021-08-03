@@ -4,7 +4,7 @@ import gerador.TempoDeExecucao;
 
 public class BubbleSort extends TempoDeExecucao {
 
-	public int[] execute(int[] vetor) {
+	public void execute(int[] vetor) {
 		boolean troca = true;
 		iniciar();
 		for (int i = 1; (i < vetor.length) && (troca); i++) {
@@ -20,6 +20,12 @@ public class BubbleSort extends TempoDeExecucao {
 			}
 		}
 		finalizar();
-		return vetor;
+	}
+	
+	public void run(int[] vetor) {
+		execute(vetor);
+		
+		System.out.println("---- Bubble Sort ---- \nTempo de Processamento: "+ (finalDoTeste - inicioDoTeste) +" milissegundos \n");
+		
 	}
 }
