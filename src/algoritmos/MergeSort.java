@@ -1,8 +1,8 @@
 package algoritmos;
 
-import gerador.TempoDeExecucao;
+import gerador.Atributos;
 
-public class MergeSort extends TempoDeExecucao {
+public class MergeSort extends Atributos {
 	/**
 	   * Método que ordena um vetor de elementos inteiros, utilizando o algoritmo
 	   * do Merge Sort.
@@ -39,7 +39,7 @@ public class MergeSort extends TempoDeExecucao {
 	   * @param meio  - Posição do meio da ordenação no vetor.
 	   * @param fim  - Posição final da ordenação no vetor.
 	   */
-	  private static void intercala(int[] vetor, int inicio, int meio, int fim) {
+	  private static  void intercala(int[] vetor, int inicio, int meio, int fim) {
 	    /* Vetor utilizado para guardar os valors ordenados. */
 	    int novoVetor[] = new int[fim - inicio];
 	    /* Variavel utilizada para guardar a posicao do inicio do vetor. */
@@ -56,15 +56,18 @@ public class MergeSort extends TempoDeExecucao {
 	    while(i < meio && m < fim) {
 	      /* Se o vetor[i] for menor que o vetor[m], então guarda o valor do
 	        vetor[i] pois este é menor. */
+	    	testeChave++;
 	      if(vetor[i] <= vetor[m]) {
 	        novoVetor[pos] = vetor[i];
 	        pos = pos + 1;
 	        i = i + 1;
+	        trocaChave++;
 	      // Senão guarda o valor do vetor[m] pois este é o menor.
 	      } else {
 	        novoVetor[pos] = vetor[m];
 	        pos = pos + 1;
 	        m = m + 1;
+	        trocaChave++;
 	      }
 	    }
 	    
@@ -74,6 +77,7 @@ public class MergeSort extends TempoDeExecucao {
 	      novoVetor[pos] = vetor[i];
 	      pos = pos + 1;
 	      i = i + 1;
+	      trocaChave++;
 	    }
 	    
 	    // Adicionar no vetor os elementos que estão entre o meio e o fim,
@@ -82,16 +86,20 @@ public class MergeSort extends TempoDeExecucao {
 	      novoVetor[pos] = vetor[m];
 	      pos = pos + 1;
 	      m = m + 1;
+	      trocaChave++;
 	    }
 	    
 	    // Coloca no vetor os valores já ordenados.
 	    for(pos = 0, i = inicio; i < fim; i++, pos++) {
 	      vetor[i] = novoVetor[pos];
+	      trocaChave++;
 	    }
 	  }
 
 
 	public static void execute(int vetor[], int inicio, int fim) {
+		trocaChave = 0;
+		testeChave = 0;
 		int meio;
 		if (inicio < fim) {
 			meio = (inicio + fim) / 2;
@@ -106,7 +114,7 @@ public class MergeSort extends TempoDeExecucao {
 		execute(vetor, 0, vetor.length - 1);
 		finalizar();
 		System.out.println("---- Merge Sort ---- \nTempo de Processamento: " + (finalDoTeste - inicioDoTeste)
-				+ " milissegundos \n");
+				+ " milissegundos \nTestes de Chaves: "+testeChave +" \nTrocas de Chaves: "+ trocaChave +"\n");
 
 	}
 }

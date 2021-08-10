@@ -9,7 +9,11 @@ import gerador.GeradorDeSequencias;
 
 public class InicializarPrograma {
 
-	private int[] vetor = null;
+	private int[] vetor1 = null;
+	private int[] vetor2 = null;
+	private int[] vetor3 = null;
+	private int[] vetor4 = null;
+	private int[] vetor5 = null;
 	int[] numeros = { 10, 100, 1000, 10000, 100000, 1000000 };
 	private static BubbleSort bubbleSort = new BubbleSort();
 	private static InsertionSort insertionSort = new InsertionSort();
@@ -25,12 +29,16 @@ public class InicializarPrograma {
 		for (int i : numeros) {
 			System.out
 					.println("------------------------------------------------- \nTeste Vetor Ordernado Tamanho " + i);
-			vetor = GeradorDeSequencias.geradorDeSequenciaOrdenadada(i);
-			bubbleSort.run(vetor);
-			insertionSort.run(vetor);
-			quickSort.run(vetor);
-			selectionSort.run(vetor);
-			mergeSort.run(vetor);
+			this.vetor1 = GeradorDeSequencias.geradorDeSequenciaOrdenadada(i);
+			vetor2 = vetor1.clone();
+			vetor3 = vetor1.clone();
+			vetor4 = vetor1.clone();
+			vetor5 = vetor1.clone();
+			bubbleSort.run(vetor1);
+			insertionSort.run(vetor2);
+			quickSort.run(vetor3);
+			selectionSort.run(vetor4);
+			mergeSort.run(vetor5);
 		}
 	}
 
@@ -42,12 +50,16 @@ public class InicializarPrograma {
 			System.out.println(
 					"------------------------------------------------- \nTeste Vetor Ordernado Inversamente Tamanho "
 							+ i);
-			this.vetor = GeradorDeSequencias.geradorDeSequenciaInversa(10);
-			bubbleSort.run(vetor);
-			insertionSort.run(vetor);
-			quickSort.run(vetor);
-			selectionSort.run(vetor);
-			mergeSort.run(vetor);
+			this.vetor1 = GeradorDeSequencias.geradorDeSequenciaInversa(i);
+			vetor2 = vetor1.clone();
+			vetor3 = vetor1.clone();
+			vetor4 = vetor1.clone();
+			vetor5 = vetor1.clone();
+			bubbleSort.run(vetor1);
+			insertionSort.run(vetor2);
+			quickSort.run(vetor3);
+			selectionSort.run(vetor4);
+			mergeSort.run(vetor5);
 		}
 	}
 
@@ -57,13 +69,17 @@ public class InicializarPrograma {
 	public void vetoresQuaseOrdenados() {
 		for (int i : numeros) {
 			System.out.println(
-					"------------------------------------------------- \nTeste Vetor Quase Ordernado Tamanho " + i);
-			this.vetor = GeradorDeSequencias.geradorDeSequenciaQuaseOrdenada(i);
-			bubbleSort.run(vetor);
-			insertionSort.run(vetor);
-			quickSort.run(vetor);
-			selectionSort.run(vetor);
-			mergeSort.run(vetor);
+					"------------------------------------------------- \nTeste Vetor Quase Ordernado Tamanho "+ i);
+			this.vetor1 = GeradorDeSequencias.geradorDeSequenciaQuaseOrdenada(i);
+			vetor2 = vetor1.clone();
+			vetor3 = vetor1.clone();
+			vetor4 = vetor1.clone();
+			vetor5 = vetor1.clone();
+			bubbleSort.run(vetor1);
+			insertionSort.run(vetor2);
+			quickSort.run(vetor3);
+			selectionSort.run(vetor4);
+			mergeSort.run(vetor5);
 		}
 	}
 
@@ -74,18 +90,22 @@ public class InicializarPrograma {
 		for (int i : numeros) {
 			System.out
 					.println("------------------------------------------------- \nTeste Vetor Aleatório Tamanho " + i);
-			vetor = GeradorDeSequencias.geradorDeSequenciaAleatoria(i);
-			bubbleSort.run(vetor);
-			insertionSort.run(vetor);
-			quickSort.run(vetor);
-			selectionSort.run(vetor);
-			mergeSort.run(vetor);
+			this.vetor1 = GeradorDeSequencias.geradorDeSequenciaAleatoria(i);
+			vetor2 = vetor1.clone();
+			vetor3 = vetor1.clone();
+			vetor4 = vetor1.clone();
+			vetor5 = vetor1.clone();
+			bubbleSort.run(vetor1);
+			insertionSort.run(vetor2);
+			quickSort.run(vetor3);
+			selectionSort.run(vetor4);
+			mergeSort.run(vetor5);
 		}
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 		InicializarPrograma i = new InicializarPrograma();
-		i.vetoresInversos();
+		i.vetoresOrdenados();
 	}
 
 }

@@ -1,8 +1,8 @@
 package algoritmos;
 
-import gerador.TempoDeExecucao;
+import gerador.Atributos;
 
-public class SelectionSort extends TempoDeExecucao {
+public class SelectionSort extends Atributos {
 
 	public  void execute(int[] vetor, int tamanho) {
 		iniciar();
@@ -11,19 +11,26 @@ public class SelectionSort extends TempoDeExecucao {
 		for (i = 0; i < tamanho - 1; ++i) {
 			menor = i;
 			for (j = i + 1; j < tamanho; ++j) {
-				if (vetor[j] < vetor[menor])
+				testeChave++;
+				if (vetor[j] < vetor[menor]) {
 					menor = j;
+					trocaChave++;
+				}
 			}
 			aux = vetor[i];
 			vetor[i] = vetor[menor];
 			vetor[menor] = aux;
+			trocaChave+=2;
 		}
 		finalizar();
 	}
 	
 	public void run(int[] vetor) {
+		trocaChave = 0;
+		testeChave = 0;
 		execute(vetor, vetor.length);
-		System.out.println("---- Selection Sort ---- \nTempo de Processamento: "+ (finalDoTeste - inicioDoTeste) +" milissegundos \n");
-		
+		System.out.println("---- Selection Sort ---- \nTempo de Processamento: " + (finalDoTeste - inicioDoTeste)
+				+ " milissegundos \nTestes de Chaves: "+testeChave +" \nTrocas de Chaves: "+ trocaChave +"\n");
+
 	}
 }
