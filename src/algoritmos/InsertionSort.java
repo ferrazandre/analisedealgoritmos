@@ -11,12 +11,14 @@ public class InsertionSort extends Atributos {
 		for (int i = 1; i < v.length; i++) {
 			int aux = v[i];
 			int j = i;
-			testeChave++;
 			while ((j > 0) && (v[j - 1] > aux)) {
 				v[j] = v[j - 1];
 				j -= 1;
 				trocaChave++;
+				testeChave++;
 			}
+			testeChave++;
+			trocaChave++;
 			v[j] = aux;
 		}
 		finalizar();

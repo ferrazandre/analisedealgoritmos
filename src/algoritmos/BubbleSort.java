@@ -11,15 +11,15 @@ public class BubbleSort extends Atributos {
 		iniciar();
 		for (int i = 1; (i < vetor.length) && (troca); i++) {
 			troca = false;
-			testeChave++;
 			for (int j = 0; j < vetor.length - 1; j++) {
+				testeChave++;
 				if (vetor[j] > vetor[j + 1]) {
 					int aux;
 					aux = vetor[j];
 					vetor[j] = vetor[j + 1];
 					vetor[j + 1] = aux;
 					troca = true;
-					trocaChave++;
+					trocaChave+=2;
 				}
 			}
 		}

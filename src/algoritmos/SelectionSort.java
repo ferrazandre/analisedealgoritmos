@@ -14,7 +14,6 @@ public class SelectionSort extends Atributos {
 				testeChave++;
 				if (vetor[j] < vetor[menor]) {
 					menor = j;
-					trocaChave++;
 				}
 			}
 			aux = vetor[i];
