@@ -16,20 +16,20 @@ public class QuickSort extends Atributos {
 				testeChave++;
 			}
 			testeChave++;
-			
+
 			while (d >= i && v[d] > pivo) {
 				d--;
 				testeChave++;
 
 			}
-			testeChave+=2;
+			testeChave += 2;
 			if (e <= d) {
 				int aux = v[e];
 				v[e] = v[d];
 				v[d] = aux;
 				e++;
 				d--;
-				trocaChave+=2;
+				trocaChave += 2;
 			}
 		}
 		if (e < f)

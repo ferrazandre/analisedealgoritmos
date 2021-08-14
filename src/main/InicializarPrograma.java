@@ -69,7 +69,7 @@ public class InicializarPrograma {
 	public void vetoresQuaseOrdenados() {
 		for (int i : numeros) {
 			System.out.println(
-					"------------------------------------------------- \nTeste Vetor Quase Ordernado Tamanho "+ i);
+					"------------------------------------------------- \nTeste Vetor Quase Ordernado Tamanho " + i);
 			this.vetor1 = GeradorDeSequencias.geradorDeSequenciaQuaseOrdenada(i);
 			vetor2 = vetor1.clone();
 			vetor3 = vetor1.clone();
@@ -106,6 +106,15 @@ public class InicializarPrograma {
 	public static void main(String[] args) throws InterruptedException {
 		InicializarPrograma i = new InicializarPrograma();
 		i.vetoresOrdenados();
+		i.vetoresInversos();
+		for (int n = 0; n < 14; n++) {
+			System.out.println("---------- " + (n + 1) + " ----------");
+			i.vetoresQuaseOrdenados();
+		} 
+		for (int n = 0; n < 14; n++) {
+			System.out.println("---------- " + (n + 1) + " ----------");
+			i.vetoresAleatorios();
+		}
 	}
 
 }
